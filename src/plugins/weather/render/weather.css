@@ -97,11 +97,9 @@
 
 /* Data Points Grid */
 .data-points {
-  display: grid;
-  justify-content: space-evenly;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5vh 1vw;
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .data-point {
@@ -112,7 +110,6 @@
 
 .data-point-img-container {
   width: 25%;
-  height: 80%;
   align-content: center;
 }
 
@@ -231,7 +228,7 @@
 
 .chart-container {
   width: 100%;
-  height: 16dvh;
+  height: 100%;
 }
 
 @media (max-aspect-ratio: 1) {

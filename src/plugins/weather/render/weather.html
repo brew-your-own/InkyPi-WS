@@ -20,29 +20,29 @@
         </div>
     </div>
 
-    <!-- Data Points Grid (Sunset, Wind, UV, etc.) -->
-    {% if plugin_settings.displayMetrics and  plugin_settings.displayMetrics == "true" %}
-    <div class="data-points">
-      {% for dp in data_points %}
-        <div class="data-point column-container">
-          <div class="data-point-img-container">
-            <img class="data-point-icon" src="{{dp.icon}}" alt="{{ dp.label }}">
-          </div>
-          <div class="data-point-data">
-            <div class="data-point-label">{{ dp.label }}</div>
-            <div class="data-point-measurement">{{ dp.measurement }}{% if dp.unit %}<span class="data-point-unit">{{ dp.unit }}</span>{% endif %}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
+    <!-- Hourly Temperature Graph -->
+    {% if plugin_settings.displayGraph and plugin_settings.displayGraph == "true" %}
+    <div class="chart-container">
+      <canvas id="hourlyTemperatureChart"></canvas>
     </div>
     {% endif %}
-  </div>
+   </div>
 
-  <!-- Hourly Temperature Graph -->
-  {% if plugin_settings.displayGraph and plugin_settings.displayGraph == "true" %}
-  <div class="chart-container">
-    <canvas id="hourlyTemperatureChart"></canvas>
+  <!-- Data Points Grid (Sunset, Wind, UV, etc.) -->
+  {% if plugin_settings.displayMetrics and  plugin_settings.displayMetrics == "true" %}
+  <div class="data-points">
+    {% for dp in data_points %}
+      <div class="data-point column-container">
+        <div class="data-point-img-container">
+          <img class="data-point-icon" src="{{dp.icon}}" alt="{{ dp.label }}">
+        </div>
+        <div class="data-point-data">
+          <div class="data-point-label">{{ dp.label }}</div>
+          <div class="data-point-measurement">{{ dp.measurement }}{% if dp.unit %}<span class="data-point-unit">{{ dp.unit }}</span>{% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
   {% endif %}
 
