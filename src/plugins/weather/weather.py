@@ -82,6 +82,7 @@ class Weather(BasePlugin):
         location_str = f"{location_data.get('name')}, {location_data.get('state', location_data.get('country'))}"
         data = {
             "current_date": dt.strftime("%A, %B %d"),
+            "timestamp": dt.strftime("%X"),
             "location": location_str,
             "current_day_icon": self.get_plugin_dir(f'icons/{current_icon}.png'),
             "current_temperature": str(round(current.get("temp"))),
