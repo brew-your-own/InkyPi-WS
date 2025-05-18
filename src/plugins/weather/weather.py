@@ -115,7 +115,7 @@ class Weather(BasePlugin):
         for hour in hourly_forecast[:24]:
             dt = datetime.fromtimestamp(hour.get('dt'), tz=timezone.utc).astimezone(tz)
             hour_forecast = {
-                "time": dt.strftime("%-I %p"),
+                "time": dt.strftime("%-Hh"),
                 "temperature": int(hour.get("temp")),
                 "precipitiation": hour.get("pop")
             }

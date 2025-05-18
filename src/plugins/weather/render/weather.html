@@ -4,9 +4,8 @@
 <div class="weather-dashboard">
   <!-- Current Date -->
   <div class="header">
-    <div class="timestamp">{{ timestamp }}</div>
     <div class="location">{{ location }}</div>
-    <div class="current-date">{{ current_date }}</div>
+    <div class="current-date">{{ current_date }} - Updated: {{ timestamp }}</div>
   </div>
 
   <div class="today-container">
@@ -92,8 +91,8 @@
           type: 'line',
           label: 'Hourly Temperature',
           data: temperatures,
-          borderColor: 'rgba(241, 122, 36, 0.9)', // Line color
-          borderWidth: 2,
+          borderColor: 'rgba(241, 122, 36, 1)', // Line color
+          borderWidth: 4,
           pointRadius: 0, // Hide points
           fill: true, // Enable filling the area under the line
           tension: 0.5
@@ -104,7 +103,7 @@
           data: precipitation,
           borderColor: 'rgba(26, 111, 176, 1)', // Semi-transparent blue
           borderWidth: {
-            top: 2,
+            top: 4,
             right: 0,
             bottom: 0,
             left: 0
